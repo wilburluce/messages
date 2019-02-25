@@ -77,7 +77,7 @@
     "@angular-devkit/core" "7.3.3"
     rxjs "6.3.3"
 
-"@angular-devkit/core@7.3.3":
+"@angular-devkit/core@7.3.3", "@angular-devkit/core@^7.0.2":
   version "7.3.3"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.3.3.tgz#cd6d5a8eca25ef07b6394bc2b08133d90d08d39f"
   dependencies:
@@ -87,7 +87,7 @@
     rxjs "6.3.3"
     source-map "0.7.3"
 
-"@angular-devkit/schematics@7.3.3":
+"@angular-devkit/schematics@7.3.3", "@angular-devkit/schematics@^7.0.2":
   version "7.3.3"
   resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-7.3.3.tgz#80e9dc3197a3181f32edfb5c07e7ac016eace7d3"
   dependencies:
@@ -99,6 +99,14 @@
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-7.2.6.tgz#5153d68da7f7dd08e26490f72f97679a93e78f34"
   dependencies:
     tslib "^1.9.0"
+
+"@angular/cdk@~7.3.3":
+  version "7.3.3"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-7.3.3.tgz#02a2ad248141cd9968a5950ce0602da3fcf5445b"
+  dependencies:
+    tslib "^1.7.1"
+  optionalDependencies:
+    parse5 "^5.0.0"
 
 "@angular/cli@~7.3.3":
   version "7.3.3"
@@ -161,6 +169,12 @@
 "@angular/language-service@~7.2.0":
   version "7.2.6"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-7.2.6.tgz#cc4fc6427667c57f3745de889d30bd751bb4c325"
+
+"@angular/material@^7.3.3":
+  version "7.3.3"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-7.3.3.tgz#f3f87fa90c685cfad0b6974489c69d2676199052"
+  dependencies:
+    tslib "^1.7.1"
 
 "@angular/platform-browser-dynamic@~7.2.0":
   version "7.2.6"
@@ -257,6 +271,33 @@
     esutils "^2.0.2"
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
+
+"@briebug/ngrx-entity-schematic@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@briebug/ngrx-entity-schematic/-/ngrx-entity-schematic-0.1.2.tgz#1537793f8a4f8a97d7ed2089b32ef27af3965721"
+  dependencies:
+    "@angular-devkit/core" "^7.0.2"
+    "@angular-devkit/schematics" "^7.0.2"
+
+"@ngrx/effects@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-7.2.0.tgz#8aa318ac247d8e9a428625562a124a6463e3ee2f"
+
+"@ngrx/entity@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-7.2.0.tgz#b8de8fd6fb39b87eb4187a9768e39e2862e35669"
+
+"@ngrx/schematics@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/schematics/-/schematics-7.2.0.tgz#2802a6f7533904967416de09c306e4149f58d1e6"
+
+"@ngrx/store-devtools@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-7.2.0.tgz#91e2287f0d67d4e79c51bd3d649a5013e71bbcad"
+
+"@ngrx/store@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-7.2.0.tgz#b22200fd48b721afe0e5cc9eec92f3dc31c078b1"
 
 "@ngtools/webpack@7.3.3":
   version "7.3.3"
@@ -4267,6 +4308,10 @@ parse5@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
 
+parse5@^5.0.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-5.1.0.tgz#c59341c9723f414c452975564c7c00a68d58acd2"
+
 parseqs@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/parseqs/-/parseqs-0.0.5.tgz#d5208a3738e46766e291ba2ea173684921a8b89d"
@@ -4864,13 +4909,13 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs@6.3.3, rxjs@~6.3.3:
+rxjs@6.3.3:
   version "6.3.3"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.3.3.tgz#3c6a7fa420e844a81390fb1158a9ec614f4bad55"
   dependencies:
     tslib "^1.9.0"
 
-rxjs@^6.1.0:
+rxjs@^6.1.0, rxjs@^6.3.3:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.4.0.tgz#f3bb0fe7bda7fb69deac0c16f17b50b0b8790504"
   dependencies:
@@ -5714,7 +5759,7 @@ ts-node@~7.0.0:
     source-map-support "^0.5.6"
     yn "^2.0.0"
 
-tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
 

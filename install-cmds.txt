@@ -1,0 +1,20 @@
+ 1760  ng config cli.defaultCollection @ngrx/schematics
+ 1761  ng g store State --root --module=app.module.ts
+ 1762  npm install @ngrx/schematics @ngrx/entity
+ 1763  ng g store State --root --module=app.module.ts
+ 1764  npm install @ngrx/store-devtools
+ 1765  npm install @rxjs
+ 1766  npm install rxjs
+ 1767  ng generate effect App --root --module app.module.ts
+ 1768  npm install @ngrx/effects
+ 1769  ng generate feature User --module app.module.ts
+ 1770  ng add @angular/material
+ 1790  ng g module user src/app/shared/store
+ 1798  ng generate feature User --module app.module.ts
+ 1799  ng add @briebug/ngrx-entity-schematic
+ 1800  npm install jasmine-marbles@latest
+
+https://www.dzurico.com/angular-ngrx-with-schematics/
+https://medium.com/ngrx/ngrx-5-and-schematics-2d8cc3906506
+https://github.com/briebug/ngrx-entity-schematic#how-to-use
+https://github.com/synapse-wireless-labs/jasmine-marbles/issues/28

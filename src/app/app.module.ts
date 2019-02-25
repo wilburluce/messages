@@ -7,8 +7,6 @@ import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
-import * as fromUser from './shared/store/user/user.reducer';
-import { UserEffects } from './shared/store/user/user.effects';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -21,8 +19,6 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([]),
-    StoreModule.forFeature('user', fromUser.reducer),
-    EffectsModule.forFeature([UserEffects]),
     NoopAnimationsModule
   ],
   providers: [],

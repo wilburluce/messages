@@ -41,12 +41,12 @@ export type ServiceActionConfig = [ServiceEntity, ServiceOperation, ServicePhase
  *  base class for all service/http actions. notice that the type instance property is a string computed from
  *  the types that define the action. The identical type string is also a static member in each action class..
  *  this is so we can get access the type property on the class e.g.
- *  ofType(SaltRequest.type) vs. ofType(SaltRequestActionTypes.fetchRequest).
+ *  ofType(BookRequest.type) vs. ofType(BookRequestActionTypes.fetchRequest).
  */
 export class BaseServiceAction extends BaseAction {
   public readonly entity: ServiceEntity;
   public readonly operation: ServiceOperation;
-  public readonly opStatus: ServicePhase;
+  public readonly phase: ServicePhase;
 
   public get spinnerMessage(): string {
     let message = '';
@@ -68,6 +68,6 @@ export class BaseServiceAction extends BaseAction {
     super(BaseAction.registerType(config));
     this.entity = config[0];
     this.operation = config[1];
-    this.opStatus = config[2];
+    this.phase = config[2];
   }
 }

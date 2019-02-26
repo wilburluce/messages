@@ -1,23 +1,31 @@
 import { Action } from '@ngrx/store';
 import { User } from './models/user.model';
 
+export type ServiceEntity = 'User' | 'Message' | 'Topic';
+
+export type ServiceOperation = 'fetch' | 'save' | 'delete' ;
+
+export type ServicePhase = 'request' | 'complete' | 'error';
+
+export type ServiceActionConfig = [ServiceEntity, ServiceOperation, ServicePhase];
+
+export type ActionConfig = ServiceActionConfig | string[];
+
 /*
  *  BaseAction
  *  This is the base class for creating ngrx actions.
  *
  *  Each subclass of BaseAction must add a static property named type whose value is set by calling registerType.
- *  registerType checks for duplicate names, adds the type to the set of actions and returns the type string.
+ *  registerType checks for duplicate types, adds the type to the set of actions and returns the type string.
  *  Putting the type as a static property eliminates the need for separate action type enums.
  */
 
 export abstract class BaseAction implements Action {
-  /**
-   *  public static type: string;
-   **/
+  // public static type: string; -- here for doc purposes
   private static actionTypes = new Set<string>();
   public readonly type: string;
 
-  public static makeTypeString(config: ActionConfig) {
+  public static makeTypeString(config: ActionConfig): string {
     return config.join();
   }
 
@@ -30,7 +38,7 @@ export abstract class BaseAction implements Action {
     return typeStr;
   }
 
-  constructor(config: ServiceActionConfig) {
+  constructor(config: ActionConfig) {
     const type = BaseAction.makeTypeString(config);
     if (!BaseAction.actionTypes.has(type)) {
       throw new Error(`Your action type is not registered, see base.actions.ts for more info: '${type}'`);
@@ -39,23 +47,14 @@ export abstract class BaseAction implements Action {
   }
 }
 
-export type ServiceEntity = 'User' | 'Message' | 'Topic';
-
-export type ServiceOperation = 'fetch' | 'save' | 'delete' ;
-
-export type ServicePhase = 'request' | 'complete' | 'error';
-
-export type ServiceActionConfig = [ServiceEntity, ServiceOperation, ServicePhase];
-
-export type ActionConfig = ServiceActionConfig | string[];
-
 /*  BaseServiceAction
- *  base class for all service/http actions. notice that the type instance property is a string computed from
- *  the types that define the action. The identical type string is also a static member in each action class..
+ *  Base class for async actions. Notice that the type instance property is a string computed from
+ *  the 3 elements that define the action. The identical type string is also a static member in each action class..
  *  this is so we can get access the type property on the class e.g.
  *  ofType(BookRequest.type) vs. ofType(BookRequestActionTypes.fetchRequest).
  */
 export class BaseServiceAction extends BaseAction {
+
   public get operation(): ServiceOperation {
     return this.config[1];
   }

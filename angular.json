@@ -141,5 +141,10 @@
   "defaultProject": "messages",
   "cli": {
     "defaultCollection": "@ngrx/schematics"
+  },
+  "schematics": {
+    "@nrwl/schematics:component": {
+      "styleext": "scss"
+    }
   }
 }

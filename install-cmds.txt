@@ -3,7 +3,6 @@
  1762  npm install @ngrx/schematics @ngrx/entity
  1763  ng g store State --root --module=app.module.ts
  1764  npm install @ngrx/store-devtools
- 1765  npm install @rxjs
  1766  npm install rxjs
  1767  ng generate effect App --root --module app.module.ts
  1768  npm install @ngrx/effects
@@ -13,8 +12,13 @@
  1798  ng generate feature User --module app.module.ts
  1799  ng add @briebug/ngrx-entity-schematic
  1800  npm install jasmine-marbles@latest
+ 2084  npm install @ngrx/router-store
+ 2085  npm install -g @briebug/jest-schematic
+ 2086  ng g @briebug/jest-schematic:add
+
 
 https://www.dzurico.com/angular-ngrx-with-schematics/
 https://medium.com/ngrx/ngrx-5-and-schematics-2d8cc3906506
 https://github.com/briebug/ngrx-entity-schematic#how-to-use
 https://github.com/synapse-wireless-labs/jasmine-marbles/issues/28
+https://github.com/briebug/jest-schematic

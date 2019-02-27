@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { User } from './models/user.model';
+import { User } from './store/user/user.model';
 
 export type ServiceEntity = 'User' | 'Message' | 'Topic';
 

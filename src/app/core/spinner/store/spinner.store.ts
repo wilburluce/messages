@@ -10,7 +10,7 @@ export class SpinnerStore {
     constructor(public store: Store<spinner.State>) {}
     public selectSpinner(): Observable<spinner.State> {
         return this.store.pipe(
-            select(state => state.spinner)
+            select(getSpinnerState)
         );
     }
 }

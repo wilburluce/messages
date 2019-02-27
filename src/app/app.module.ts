@@ -5,16 +5,14 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { SpinnerComponent } from './core/spinner/spinner.component';
 import { CommonModule } from '@angular/common';
 import { SpinnerModule } from './core/spinner/spinner.module';
 import { UserModule } from './shared/store/user/user.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SpinnerComponent
+    AppComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +23,8 @@ import { UserModule } from './shared/store/user/user.module';
     EffectsModule.forRoot([]),
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({maxAge: 25}),
-    NoopAnimationsModule
+    BrowserAnimationsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

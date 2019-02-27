@@ -85,7 +85,7 @@ export class BaseServiceAction extends BaseAction {
 }
 
 class TestAction extends BaseServiceAction {
-  public static config: ServiceActionConfig = ['User', 'fetch', 'complete'];
+  public static config: ServiceActionConfig = ['Topic', 'fetch', 'complete'];
   public static type = BaseAction.registerType(TestAction.config);
 
   constructor(user: User) {

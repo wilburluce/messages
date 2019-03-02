@@ -12,6 +12,12 @@ export class UserEffects {
     delay(2000),
     map(action => new UserComplete({name: 'Mark', id: 4})));
 
+  @Effect()
+  public fetchUserList$ = this.actions$.pipe(
+    ofType(UserRequest.type),
+    delay(2000),
+    map(action => new UserComplete({name: 'Mark', id: 4})));
+
   constructor(private actions$: Actions) {}
 
 }

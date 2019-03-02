@@ -24,6 +24,5 @@ export function reducer(state = initialState, action: Actions): State {
   if (action.type === SpinnerReset.type || state.requests === 0) {
     state = initialState;
   }
-
   return {...state};
 }

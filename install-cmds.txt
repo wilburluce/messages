@@ -14,7 +14,7 @@
  1800  npm install jasmine-marbles@latest
  2084  npm install @ngrx/router-store
  2085  npm install -g @briebug/jest-schematic
- 2086  ng g @briebug/jest-schematic:add
+   2086  ng g @briebug/jest-schematic:add
 
 
 https://www.dzurico.com/angular-ngrx-with-schematics/

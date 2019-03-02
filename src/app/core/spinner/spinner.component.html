@@ -1,5 +1,5 @@
-<ng-container *ngIf="spinnerStore.selectSpinner() | async as spinner">
-  asldfkjasdf
-  <mat-progress-spinner mode="indeterminate" *ngIf="spinner.requests"></mat-progress-spinner>
-</ng-container>
-HELLO
+<div class="loading-indicator" *ngIf="spinnerStore.selectSpinner() | async as spinner">
+  <div class="center-message">{{spinner.message}}</div>
+  <mat-progress-spinner diameter="100" strokeWidth="50" mode="indeterminate" *ngIf="spinner.requests">
+  </mat-progress-spinner>
+</div>

@@ -3,7 +3,7 @@ import { User } from './store/user/user.model';
 
 export type ServiceEntity = 'User' | 'Message' | 'Topic';
 
-export type ServiceOperation = 'fetch' | 'save' | 'delete' ;
+export type ServiceOperation = 'fetch' | 'fetchList' | 'save' | 'delete' ;
 
 export type ServicePhase = 'request' | 'complete' | 'error';
 
@@ -47,11 +47,10 @@ export abstract class BaseAction implements Action {
   }
 }
 
-/*  BaseServiceAction
- *  Base class for async actions. Notice that the type instance property is a string computed from
- *  the 3 elements that define the action. The identical type string is also a static member in each action class..
- *  this is so we can get access the type property on the class e.g.
- *  ofType(BookRequest.type) vs. ofType(BookRequestActionTypes.fetchRequest).
+/**
+ * BaseServiceAction
+ *
+ * ofType(BookFetchRequest.type) vs. ofType(BookRequestActionTypes.fetchRequest).
  */
 export class BaseServiceAction extends BaseAction {
 
@@ -66,6 +65,7 @@ export class BaseServiceAction extends BaseAction {
     let message = '';
     switch (this.operation) {
       case 'fetch':
+      case 'fetchList':
         message = 'Loading...';
         break;
       case 'save':

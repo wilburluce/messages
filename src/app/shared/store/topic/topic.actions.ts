@@ -12,7 +12,7 @@ export class TopicRequest extends BaseServiceAction {
 export class TopicComplete extends BaseServiceAction {
   public static config: ServiceActionConfig = ['Topic', 'fetch', 'complete'];
   public static type = BaseAction.registerType(TopicComplete.config);
-  constructor(public Topic: Topic) {
+  constructor(public topic: Topic) {
     super(TopicComplete.config);
   }
 }

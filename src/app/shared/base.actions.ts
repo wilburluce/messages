@@ -21,7 +21,7 @@ export type ActionConfig = ServiceActionConfig | string[];
  */
 
 export abstract class BaseAction implements Action {
-  // public static type = BaseAction.registerType(...); each subclass needs to add this
+  public static type: string; // BaseAction.registerType(...); each subclass needs to add this
   private static actionTypes = new Set<string>();
   public readonly type: string;
 
@@ -35,6 +35,7 @@ export abstract class BaseAction implements Action {
       throw new Error(`Duplicate action type: '${typeStr}'`);
     }
     BaseAction.actionTypes.add(typeStr);
+    return (this.constructor as typeof BaseAction).type = typeStr;
     return typeStr;
   }
 

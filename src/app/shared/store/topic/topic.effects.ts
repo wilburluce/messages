@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { TopicRequest, TopicComplete } from './Topic.actions';
+import { TopicRequest, TopicComplete } from './topic.actions';
 import { map, delay } from 'rxjs/operators';
 
 @Injectable()

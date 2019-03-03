@@ -1,4 +1,4 @@
-import { TopicList } from './Topic.model';
+import { TopicList } from './topic.model';
 
 export function getMockTopicList(): TopicList {
   const list: TopicList = [];

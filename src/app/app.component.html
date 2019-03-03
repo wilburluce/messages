@@ -1,8 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
   <h1>
-    Welcome {{ (user$ | async).name }}!
+    Welcome {{(userStore.selectUserByUserId(1)|async)?.name}}
   </h1>
+  <ul>
+    <li *ngFor="let user of userStore.selectUserNames() | async">
+      {{ user }}
+    </li>
+  </ul>
 </div>
 <app-spinner></app-spinner>
 <router-outlet></router-outlet>

@@ -19,7 +19,7 @@ export class FetchComplete extends BaseServiceAction {
 
 export class FetchListRequest extends BaseServiceAction {
   public static config: ServiceActionConfig = ['User', 'fetchList', 'request'];
-  public static type = BaseAction.registerType(FetchRequest.config);
+  public static type = BaseAction.registerType(FetchListRequest.config);
   constructor() {
     super(FetchListRequest.config);
   }
@@ -27,7 +27,7 @@ export class FetchListRequest extends BaseServiceAction {
 
 export class FetchListComplete extends BaseServiceAction {
   public static config: ServiceActionConfig = ['User', 'fetchList', 'complete'];
-  public static type = BaseAction.registerType(FetchComplete.config);
+  public static type = BaseAction.registerType(FetchListComplete.config);
   constructor(public userList: UserList) {
     super(FetchListComplete.config);
   }

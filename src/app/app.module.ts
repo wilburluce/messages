@@ -9,10 +9,17 @@ import { CommonModule } from '@angular/common';
 import { SpinnerModule } from './core/spinner/spinner.module';
 import { UserModule } from './shared/store/user/user.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TopicModule } from './shared/store/topic/topic.module';
+import { MessageModule } from './shared/store/message/message.module';
+import { MatTabsModule, MatSidenavModule } from '@angular/material';
+import { HomeComponent } from './features/home/home.component';
+import { AuthService } from './auth.service';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -20,13 +27,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     SpinnerModule,
     UserModule,
+    TopicModule,
+    MessageModule,
+    MaterialModule,
     EffectsModule.forRoot([]),
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({maxAge: 25}),
     BrowserAnimationsModule
-
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

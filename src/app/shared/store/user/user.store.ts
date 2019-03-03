@@ -37,7 +37,7 @@ export class UserStore {
     this.store.dispatch(new actions.SaveRequest());
   }
 
-  public selectByUserId(userId: number): Observable<User> {
+  public selectById(userId: number): Observable<User> {
     return this.selectState().pipe(
       map(user => userReducer.selectEntities(user)),
       map(entities => entities[userId])

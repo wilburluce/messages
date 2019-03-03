@@ -6,6 +6,7 @@ import { TopicList } from './shared/store/topic/topic.model';
 import { UserList } from './shared/store/user/user.model';
 import { Observable, combineLatest } from 'rxjs';
 import { MessageList } from './shared/store/message/message.model';
+import { AuthService } from './auth.service';
 
 interface ViewData {
   users: UserList;
@@ -22,7 +23,8 @@ export class AppComponent implements OnInit {
   constructor(
     public userStore: UserStore,
     public topicStore: TopicStore,
-    public messageStore: MessageStore
+    public messageStore: MessageStore,
+    public auth: AuthService
   ) {
     userStore.getList();
     topicStore.getList();
@@ -34,7 +36,6 @@ export class AppComponent implements OnInit {
       this.userStore.selectList(),
       this.topicStore.selectList(),
       this.messageStore.selectList(),
-
-    )
+    );
   }
 }

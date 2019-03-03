@@ -1,5 +1,4 @@
 import { Action } from '@ngrx/store';
-import { User } from './store/user/user.model';
 
 export type ServiceEntity = 'User' | 'Message' | 'Topic';
 
@@ -21,7 +20,7 @@ export type ActionConfig = ServiceActionConfig | string[];
  */
 
 export abstract class BaseAction implements Action {
-  public static type: string; // BaseAction.registerType(...); each subclass needs to add this
+  // public static type: string; BaseAction.registerType(ActionConfig|BaseActionConfig); each subclass needs to add this
   private static actionTypes = new Set<string>();
   public readonly type: string;
 
@@ -35,7 +34,6 @@ export abstract class BaseAction implements Action {
       throw new Error(`Duplicate action type: '${typeStr}'`);
     }
     BaseAction.actionTypes.add(typeStr);
-    return (this.constructor as typeof BaseAction).type = typeStr;
     return typeStr;
   }
 
@@ -85,12 +83,4 @@ export class BaseServiceAction extends BaseAction {
   }
 }
 
-class TestAction extends BaseServiceAction {
-  public static config: ServiceActionConfig = ['Topic', 'fetch', 'complete'];
-  public static type = BaseAction.registerType(TestAction.config);
-
-  constructor(user: User) {
-    super(TestAction.config);
-  }
-}
 

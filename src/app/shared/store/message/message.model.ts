@@ -1,6 +1,10 @@
 export interface Message {
-  name: string;
   id: number;
+  userId: number;
+  parentId?: number;
+  topicId: number;
+  content: string;
+  created: Date;
 }
 
 export type MessageList = Message[];

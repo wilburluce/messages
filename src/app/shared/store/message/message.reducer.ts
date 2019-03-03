@@ -8,8 +8,7 @@ export interface State extends EntityState<Message> {}
 
 export const messageAdapter: EntityAdapter<Message> = createEntityAdapter<Message>({
   selectId: message => message.id,
-  sortComparer: (a: Message, b: Message): number =>
-    a.name.localeCompare(b.name)
+  sortComparer: (a: Message, b: Message): number => a.id - b.id
 });
 
 export const initialState = messageAdapter.getInitialState({});

@@ -11,7 +11,7 @@ export class MessageEffects {
   public fetchMessage$ = this.actions$.pipe(
     ofType(actions.FetchRequest.type),
     delay(2000),
-    map(action => new actions.FetchComplete({name: 'Mark', id: 4})));
+    map(action => new actions.FetchComplete(undefined)));
 
   @Effect()
   public fetchMessageList$ = this.actions$.pipe(

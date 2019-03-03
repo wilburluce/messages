@@ -21,14 +21,14 @@ export class UserStore {
     return this.store.pipe(select(getUserState));
   }
 
-  public selectUserList(): Observable<UserList> {
+  public selectList(): Observable<UserList> {
     return this.selectState().pipe(
       map(user => userReducer.selectAll(user))
     );
   }
 
-  public selectUserNames(): Observable<string[]> {
-    return this.selectUserList().pipe(
+  public selectNames(): Observable<string[]> {
+    return this.selectList().pipe(
       map(userList => userList.map(user => user.name))
     );
   }
@@ -37,7 +37,7 @@ export class UserStore {
     this.store.dispatch(new actions.SaveRequest());
   }
 
-  public selectUserByUserId(userId: number): Observable<User> {
+  public selectByUserId(userId: number): Observable<User> {
     return this.selectState().pipe(
       map(user => userReducer.selectEntities(user)),
       map(entities => entities[userId])

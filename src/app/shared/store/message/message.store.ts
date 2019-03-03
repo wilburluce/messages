@@ -21,15 +21,9 @@ export class MessageStore {
     return this.store.pipe(select(getMessageState));
   }
 
-  public selectMessageList(): Observable<MessageList> {
+  public selectList(): Observable<MessageList> {
     return this.selectState().pipe(
       map(message => messageReducer.selectAll(message))
-    );
-  }
-
-  public selectMessageNames(): Observable<string[]> {
-    return this.selectMessageList().pipe(
-      map(messageList => messageList.map(message => message.name))
     );
   }
 
@@ -37,7 +31,7 @@ export class MessageStore {
     this.store.dispatch(new actions.SaveRequest());
   }
 
-  public selectMessageByMessageId(messageId: number): Observable<Message> {
+  public selectByMessageId(messageId: number): Observable<Message> {
     return this.selectState().pipe(
       map(message => messageReducer.selectEntities(message)),
       map(entities => entities[messageId])

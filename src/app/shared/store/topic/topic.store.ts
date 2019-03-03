@@ -21,14 +21,14 @@ export class TopicStore {
     return this.store.pipe(select(getTopicState));
   }
 
-  public selectTopicList(): Observable<TopicList> {
+  public selectList(): Observable<TopicList> {
     return this.selectState().pipe(
       map(topic => topicReducer.selectAll(topic))
     );
   }
 
-  public selectTopicNames(): Observable<string[]> {
-    return this.selectTopicList().pipe(
+  public selectNames(): Observable<string[]> {
+    return this.selectList().pipe(
       map(topicList => topicList.map(topic => topic.name))
     );
   }
@@ -37,7 +37,7 @@ export class TopicStore {
     this.store.dispatch(new actions.SaveRequest());
   }
 
-  public selectTopicByTopicId(topicId: number): Observable<Topic> {
+  public selectByTopicId(topicId: number): Observable<Topic> {
     return this.selectState().pipe(
       map(topic => topicReducer.selectEntities(topic)),
       map(entities => entities[topicId])

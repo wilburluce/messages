@@ -4,8 +4,8 @@
     Welcome {{(userStore.selectUserByUserId(1)|async)?.name}}
   </h1>
   <ul>
-    <li *ngFor="let user of userStore.selectUserNames() | async">
-      {{ user }}
+    <li *ngFor="let message of messageStore.selectList() | async">
+      {{ message }}
     </li>
   </ul>
 </div>

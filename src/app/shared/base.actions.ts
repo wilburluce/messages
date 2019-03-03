@@ -21,7 +21,7 @@ export type ActionConfig = ServiceActionConfig | string[];
  */
 
 export abstract class BaseAction implements Action {
-  // public static type: string; -- here for doc purposes
+  // public static type = BaseAction.registerType(...); each subclass needs to add this
   private static actionTypes = new Set<string>();
   public readonly type: string;
 

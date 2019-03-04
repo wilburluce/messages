@@ -1,30 +1,43 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserModule } from '../../shared/store/user/user.module';
-import { TopicModule } from '../../shared/store/topic/topic.module';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { TopicStoreModule } from './store/topic/topic-store.module';
+import {
+  MatGridListModule,
+  MatCardModule,
+  MatMenuModule,
+  MatIconModule,
+  MatButtonModule,
+  MatTableModule,
+  MatPaginatorModule, MatSortModule
+} from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
-import { TopicDashboardComponent } from './topic-dashboard/topic-dashboard.component';
+import { TopicDashboardComponent } from './components/topic-dashboard/topic-dashboard.component';
 import { MessageRoutingModule } from './message-routing.module';
+import { MessageStoreModule } from './store/message/message-store.module';
+import { MessageDashboardComponent } from './components/message-dashboard/message-dashboard.component';
 
 @NgModule({
   declarations: [
-    TopicDashboardComponent
+    TopicDashboardComponent,
+    MessageDashboardComponent
   ],
   imports: [
     CommonModule,
     UserModule,
-    TopicModule,
+    TopicStoreModule,
+    MessageStoreModule,
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     LayoutModule,
     MessageRoutingModule
   ],
-  providers: [],
-  // exports: [TopicListComponent]
 })
 export class MessageModule {
 }

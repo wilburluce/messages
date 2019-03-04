@@ -17,4 +17,4 @@ import { TopicStore } from './topic.store';
     TopicStore
   ]
 })
-export class TopicModule { }
+export class TopicStoreModule { }

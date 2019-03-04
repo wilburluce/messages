@@ -9,8 +9,6 @@ import { CommonModule } from '@angular/common';
 import { SpinnerModule } from './core/spinner/spinner.module';
 import { UserModule } from './shared/store/user/user.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TopicModule } from './shared/store/topic/topic.module';
-import { MessageModule } from './shared/store/message/message.module';
 import { AuthService } from './auth.service';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -25,8 +23,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppRoutingModule,
     SpinnerModule,
     UserModule,
-    TopicModule,
-    MessageModule,
     MaterialModule,
     FlexLayoutModule,
     EffectsModule.forRoot([]),

@@ -3,7 +3,7 @@ import { Store, StoreModule } from '@ngrx/store';
 import { elementAt, take } from 'rxjs/operators';
 import { SpinnerStore } from './spinner.store';
 import * as spinner from './spinner.reducer';
-import * as topic from '../../../shared/store/topic/topic.actions';
+import * as topic from '../../../features/message/store/topic/topic.actions';
 
 describe('SpinnerStore', () => {
     let spinnerStore: SpinnerStore;

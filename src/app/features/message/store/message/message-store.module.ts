@@ -17,4 +17,4 @@ import { MessageStore } from './message.store';
     MessageStore
   ]
 })
-export class MessageModule { }
+export class MessageStoreModule { }

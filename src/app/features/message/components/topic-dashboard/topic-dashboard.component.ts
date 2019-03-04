@@ -31,3 +31,37 @@ export class TopicDashboardComponent {
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 }
+
+/**
+ * interface ViewData {
+  users: UserList;
+  topics: TopicList;
+  messages: MessageList;
+}
+ @Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+})
+ export class AppComponent implements OnInit {
+  public viewData: Observable<ViewData>;
+  constructor(
+    public userStore: UserStore,
+    public topicStore: TopicStore,
+    public messageStore: MessageStore,
+    public auth: AuthService
+  ) {
+    userStore.getList();
+    topicStore.getList();
+    messageStore.getList();
+  }
+
+  public ngOnInit(): void {
+    this.viewData = combineLatest<ViewData>(
+      this.userStore.selectList(),
+      this.topicStore.selectList(),
+      this.messageStore.selectList(),
+    );
+  }
+}
+ */

@@ -11,15 +11,13 @@ import { UserModule } from './shared/store/user/user.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopicModule } from './shared/store/topic/topic.module';
 import { MessageModule } from './shared/store/message/message.module';
-import { MatTabsModule, MatSidenavModule } from '@angular/material';
-import { HomeComponent } from './features/home/home.component';
 import { AuthService } from './auth.service';
 import { MaterialModule } from './material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     CommonModule,
@@ -30,6 +28,7 @@ import { MaterialModule } from './material.module';
     TopicModule,
     MessageModule,
     MaterialModule,
+    FlexLayoutModule,
     EffectsModule.forRoot([]),
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({maxAge: 25}),

@@ -1,4 +1,3 @@
-import { SpinnerReset } from './spinner.actions';
 import { BaseServiceAction } from '../../../shared/base.actions';
 
 export interface State {
@@ -7,7 +6,7 @@ export interface State {
 }
 
 const initialState: State = {requests: 0, message: ''};
-type Actions = BaseServiceAction | SpinnerReset;
+type Actions = BaseServiceAction;
 
 export function reducer(state = initialState, action: Actions): State {
   if (action instanceof BaseServiceAction) {
@@ -15,13 +14,11 @@ export function reducer(state = initialState, action: Actions): State {
       ++state.requests;
       state.message = action.spinnerMessage();
     }
-    if (action.phase === 'complete') {
-      // Math.max to prevent any race condition when loading is reset
-      // ie another request could complete just after reset which then make state -1
-      state.requests = Math.max(--state.requests, 0);
+    if (action.phase === 'complete' || action.phase === 'error') {
+      --state.requests;
     }
   }
-  if (action.type === SpinnerReset.type || state.requests === 0) {
+  if (state.requests === 0) {
     state = initialState;
   }
   return {...state};

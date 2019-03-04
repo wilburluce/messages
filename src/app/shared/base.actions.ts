@@ -25,7 +25,8 @@ export abstract class BaseAction implements Action {
   public readonly type: string;
 
   public static makeTypeString(config: ActionConfig): string {
-    return config.join();
+    const base = `[${config[0]}] `;
+    return base + config.slice(1).join(' '); // base + config.join(' ');
   }
 
   public static registerType(config: ActionConfig): string {

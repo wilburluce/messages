@@ -3,7 +3,7 @@ import { Store, StoreModule } from '@ngrx/store';
 import { elementAt, take } from 'rxjs/operators';
 import { SpinnerStore } from './spinner.store';
 import * as spinner from './spinner.reducer';
-import { UserRequest } from '../../../shared/store/user/user.actions';
+import * as topic from '../../../shared/store/topic/topic.actions';
 
 describe('SpinnerStore', () => {
     let spinnerStore: SpinnerStore;
@@ -25,7 +25,7 @@ describe('SpinnerStore', () => {
                 expect(s.requests).toEqual(1);
                 expect(s.message).toEqual('Loading...');
             });
-        spinnerStore.store.dispatch(new UserRequest());
+        spinnerStore.store.dispatch(new topic.Request());
     });
 
 });
